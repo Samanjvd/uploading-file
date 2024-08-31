@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uploading File</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div id="page" class="web-page">
+      <div class="container">
+        <div class="section-head">
+          <h3 class="title-page">Upload file</h3>
+          <ion-icon name="close-outline"></ion-icon>
+        </div>
+
+        <input
+          type="file"
+          id="input"
+          class="file-input"
+          name="files"
+          multiple
+        />
+        <div class="file-uploading-label">
+          <div class="drag page-drag-browse">
+            <div class="cloud-img">
+              <img
+                src="./icons/cloud-computing.png"
+                alt="cloud-upload"
+                width="60"
+                height="60"
+              />
+            </div>
+            <div class="text-upload-label">
+              <span class="drag-drop-text"> Drag and Drop file here or </span>
+              <b class="browse-files"> browse files </b>
+              <div class="text-head">
+                XLS , XLSX , PDF , Images & Videos are allowed.
+              </div>
+            </div>
+          </div>
+          <div class="drag text-drop">
+            <div class="drop-here">Drop Here</div>
+          </div>
+        </div>
+        <div class="section-limit">
+          <span class="max-size">Maximum size : 25MB </span>
+        </div>
+        <div class="list-section">
+          <ul class="file-list"></ul>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
