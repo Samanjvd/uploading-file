@@ -145,19 +145,6 @@ function uploadFile(file) {
 
     listUl.appendChild(li); //append inner element HTML
   }
-
-  // let i = 0;
-  // let intervalId = 0;
-
-  // setInterval(() => {
-  //   intervalId = i;
-  //   i += 10;
-  //   if (i > 100) {
-  //     clearInterval(intervalId);
-  //   }
-  // }, 1000); // print numbers every 1 second
-  // console.log("i = " + i);
-  // console.log(intervalId); // [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 }
 
 function typeValidation(type) {
@@ -198,20 +185,3 @@ fileUploadingLabel.addEventListener("drop", (e) => {
     }
   });
 });
-
-// if (e.dataTransfer.items) {
-//   [...e.dataTransfer.items].forEach((item) => {
-//     if (item.kind === "file") {
-//       // const file = item.getAsfile();
-//       if (typeValidation(item.type)) {
-//         uploadFile(item);
-//       }
-//     }
-//   });
-// } else {
-//   [...e.dataTransfer.files].forEach((file) => {
-//     if (typeValidation(file.type)) {
-//       uploadFile(file);
-//     }
-//   });
-// }
