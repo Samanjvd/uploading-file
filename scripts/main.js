@@ -1,6 +1,6 @@
 const fileUploadingLabel = document.querySelector(".file-uploading-label");
 const fileInput = document.querySelector(".file-input");
-const dropSection = document.querySelector(".page-drag-browse");
+// const dropSection = document.querySelector(".page-drag-browse");
 const dropHere = document.querySelector(".drop-here");
 const listUl = document.querySelector(".file-list");
 
@@ -27,121 +27,52 @@ function uploadFile(file) {
     alert("Your file size is greater than the specified Maximum Size...!");
   } else {
     let li = document.createElement("li");
+    let chooseIcon;
 
     switch (file.type) {
       case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
-        li.innerHTML = ` <li class="list-item">
-              <div class="left-item">
-                <img
-                  src="./icons/xls.png"
-                  alt="XLS,XLSX"
-                  width="40"
-                  height="40"
-                />
-                <span class="span-detail">
-                  <div class="text-top-progress">
-                    <span class="name">${fileName}</span>
-                    <span class="progress-percentage">%</span>
-                  </div>
-                  <div class="file-progress">
-                    <span style="width: %;"></span>
-                  </div>
-                  <span class="file-size">${fileSize}</span>
-                </span>
-              </div>
-              <ion-icon
-                class="checkmark"
-                name="checkmark-circle-sharp"
-              ></ion-icon>
-              <ion-icon class="close" name="close-circle-sharp"></ion-icon>
-            </li>`;
+        chooseIcon = "./icons/xls-file.png";
         break;
       case "application/pdf":
-        li.innerHTML = ` <li class="list-item">
-              <div class="left-item">
-                <img
-                  src="./icons/pdf (1).png"
-                  alt="application/pdf"
-                  width="40"
-                  height="40"
-                />
-                <span class="span-detail">
-                  <div class="text-top-progress">
-                    <span class="name">${fileName}</span>
-                    <span class="progress-percentage">%</span>
-                  </div>
-                  <div class="file-progress">
-                    <span style="width: %;"></span>
-                  </div>
-                  <span class="file-size">${fileSize}</span>
-                </span>
-              </div>
-              <ion-icon
-                class="checkmark"
-                name="checkmark-circle-sharp"
-              ></ion-icon>
-              <ion-icon class="close" name="close-circle-sharp"></ion-icon>
-            </li>`;
+        chooseIcon = "./icons/pdf.png";
         break;
       case "image/jpeg":
-        li.innerHTML = ` <li class="list-item">
-              <div class="left-item">
-                <img
-                  src="./icons/image.png"
-                  alt="image/jpeg"
-                  width="40"
-                  height="40"
-                />
-                <span class="span-detail">
-                  <div class="text-top-progress">
-                    <span class="name">${fileName}</span>
-                    <span class="progress-percentage">%</span>
-                  </div>
-                  <div class="file-progress">
-                    <span style="width: %;"></span>
-                  </div>
-                  <span class="file-size">${fileSize}</span>
-                </span>
-              </div>
-              <ion-icon
-                class="checkmark"
-                name="checkmark-circle-sharp"
-              ></ion-icon>
-              <ion-icon class="close" name="close-circle-sharp"></ion-icon>
-            </li>`;
+        chooseIcon = "./icons/img.png";
         break;
       case "video/mp4":
-        li.innerHTML = ` <li class="list-item">
-              <div class="left-item">
-                <img
-                  src="./icons/video.png"
-                  alt="video/mp4"
-                  width="40"
-                  height="40"
-                />
-                <span class="span-detail">
-                  <div class="text-top-progress">
-                    <span class="name">${fileName}</span>
-                    <span class="progress-percentage">%</span>
-                  </div>
-                  <div class="file-progress">
-                    <span style="width: %;"></span>
-                  </div>
-                  <span class="file-size">${fileSize}</span>
-                </span>
-              </div>
-              <ion-icon
-                class="checkmark"
-                name="checkmark-circle-sharp"
-              ></ion-icon>
-              <ion-icon class="close" name="close-circle-sharp"></ion-icon>
-            </li>`;
+        chooseIcon = "./icons/video.png";
         break;
 
       default:
-        alert("Error : file Type not define...!");
+        chooseIcon = "./icons/icons8-no-access-48.png";
         break;
     }
+
+    li.innerHTML = ` <li class="list-item">
+              <div class="left-item">
+                <img
+                  src=${chooseIcon}
+                  alt="Icon"
+                  width="40"
+                  height="40"
+                />
+                <span class="span-detail">
+                  <div class="text-top-progress">
+                    <span class="name">${fileName}</span>
+                    <span class="progress-percentage">%</span>
+                  </div>
+                  <div class="file-progress">
+                    <span style="width: %;"></span>
+                  </div>
+                  <span class="file-size">${fileSize}</span>
+                </span>
+              </div>
+              <ion-icon
+                class="checkmark"
+                name="checkmark-circle-sharp"
+              ></ion-icon>
+              <ion-icon class="close" name="close-circle-sharp"></ion-icon>
+            </li>`;
 
     listUl.appendChild(li); //append inner element HTML
   }

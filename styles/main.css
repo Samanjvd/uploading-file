@@ -191,6 +191,7 @@ span.max-size {
 .left-item {
   display: flex;
   width: 400px;
+  gap: 0.3rem;
 }
 
 /* .left-item {
